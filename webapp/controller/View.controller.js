@@ -1,11 +1,22 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller", "sap/m/MessageToast"
-], (Controller, MessageToast) => {
+    "sap/ui/core/mvc/Controller", "sap/m/MessageToast",  "sap/ui/model/json/JSONModel"
+], (Controller, MessageToast, JSONModel) => {
     "use strict";
 
+
+
     return Controller.extend("cz.sgen.ukazka.controller.View", {
-        onInit() {
-        },
+onInit() {
+  var oModel = new JSONModel({
+    itemy: [
+      { jmeno: "John", age: 30, city: "Prague", state: "CZ" },
+      { jmeno: "Jane", age: 25, city: "Brno", state: "CZ" },
+    ]
+  });
+  this.getView().setModel(oModel);
+},
+
+
 onButtonPress(oEvent) {
   console.log("🟢 Press na tlačítko:", oEvent);
 
