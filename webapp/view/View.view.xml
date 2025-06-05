@@ -3,7 +3,9 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>view_table_title}">
         <content>
-            <Button id="buttonPress" 
+
+        <VBox id="vbox" class="sapUiSmallMargin">
+                    <Button id="buttonPress" 
                     text="{i18n>pridat_cislo}" 
                     press="onButtonPress"/>
             <Text id="text"
@@ -14,7 +16,40 @@
                     press="onButtonTap"/>
             <Text id="pridatTapText"
                   text="Přidat tap text" />
-                  
+
+                <Table id="table" items="{/items}">
+                    <columns>
+                        <Column id="column1" width="50%">
+                            <Button id="columnButton1" text="{i18n>Button text 1 }" />
+                        </Column>
+
+                        <Column id="column2" width="50%">
+                            <Button id="columnButton2" text="{i18n>Button text 2 }" />
+                        </Column>
+                
+                        <Column id="column3" width="50%">
+                            <Button id="columnButton3" text="{i18n>Button text 3 }" />
+                        </Column>
+
+                                        
+                        <Column id="column4" width="50%">
+                            <Button id="columnButton4" text="{i18n>Button text 4 }" />
+                        </Column>
+
+                     </columns>
+                     
+                    
+                    <items>
+                        <ColumnListItem id="columnListItem" type="Active" press="onItemPress">
+                            <cells>
+                                <Text id="columnText2" text="Text 2" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+        </VBox>
+            
         </content>
         <footer>
             <Toolbar id="footerToolbar">

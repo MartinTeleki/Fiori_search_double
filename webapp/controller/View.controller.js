@@ -1,6 +1,6 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], (Controller) => {
+    "sap/ui/core/mvc/Controller", "sap/m/MessageToast"
+], (Controller, MessageToast) => {
     "use strict";
 
     return Controller.extend("cz.sgen.ukazka.controller.View", {
@@ -18,7 +18,7 @@ onButtonPress(oEvent) {
   console.log("📍 Source ID:", sSourceId);
   console.log("📦 Parametry události:", oParams);
   console.log("🔎 ID z parametrů (pokud existuje):", sParamId);
-  sap.m.MessageToast.show(`ID buttonu ${sParamId} bylo stisknuto`, {
+  MessageToast.show(`ID buttonu ${oButtonPressName} bylo stisknuto`, {
     duration: 3000,                  // default
     width: "15em",                   // default
     my: sap.ui.core.Popup.Dock.CenterBottom,
@@ -56,7 +56,7 @@ onButtonTap(oEvent) {
   console.log("🔎 ID komponenty:", sSourceId);
   console.log("📦 Parametry události:", oParams);
   console.log("🔎 ID z parametrů (pokud existuje):", sParamId);
-    sap.m.MessageToast.show(`ID buttonu ${sParamId} bylo stisknuto`, {
+    MessageToast.show(`ID buttonu ${oButtonTapName} bylo stisknuto`, {
     duration: 3000,                  // default
     width: "15em",                   // default
     my: sap.ui.core.Popup.Dock.CenterBottom,
