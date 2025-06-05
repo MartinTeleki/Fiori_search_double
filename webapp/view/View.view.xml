@@ -1,0 +1,26 @@
+<mvc:View controllerName="cz.sgen.ukazka.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>view_table_title}">
+        <content>
+            <Button id="buttonPress" 
+                    text="{i18n>pridat_cislo}" 
+                    press="onButtonPress"/>
+            <Text id="text"
+                  text="Přidaný press text" />
+
+            <Button id="buttonTap" 
+                    text="{i18n>pridat_tap_text}" 
+                    press="onButtonTap"/>
+            <Text id="pridatTapText"
+                  text="Přidat tap text" />
+                  
+        </content>
+        <footer>
+            <Toolbar id="footerToolbar">
+                <ToolbarSpacer id="toolbarSpacer" />
+                <Button id="footerButton" text="{i18n>view_table_footer_button_text}" press="onFooterPress" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
