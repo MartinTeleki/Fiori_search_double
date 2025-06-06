@@ -3,103 +3,146 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>view_table_title}">
         <content>
+            <VBox id="vbox" class="sapUiSmallMargin">
+                <Button
+                    id="buttonPress"
+                    text="{i18n>pridat_cislo}"
+                    press="onButtonPress"
+                />
+                <Text
+                    id="text"
+                    text="Přidaný press text"
+                />
 
-        <VBox id="vbox" class="sapUiSmallMargin">
-                    <Button id="buttonPress" 
-                    text="{i18n>pridat_cislo}" 
-                    press="onButtonPress"/>
-            <Text id="text"
-                  text="Přidaný press text" />
+                <Button
+                    id="buttonTap"
+                    text="{i18n>pridat_tap_text}"
+                    press="onButtonTap"
+                />
+                <Text
+                    id="pridatTapText"
+                    text="Přidat tap text"
+                />
 
-            <Button id="buttonTap" 
-                    text="{i18n>pridat_tap_text}" 
-                    press="onButtonTap"/>
-            <Text id="pridatTapText"
-                  text="Přidat tap text" />
+                <Button
+                    id="buttonPressDeleteColors"
+                    text="{i18n>odebrat_barvy_tlacitkum}"
+                    press="onPressDeleteColors"
+                />
+                <Text
+                    id="Odstranit_barvy_tlacitek"
+                    text="Odebrat barvy tlačítek"
+                />
 
-                  
-            <Button id="buttonPressDeleteColors" 
-                    text="{i18n>odebrat_barvy_tlacitkum}" 
-                    press="onPressDeleteColors"/>
-            <Text id="Odstranit_barvy_tlacitek"
-                  text="Přidat tap text" />
-<!--
- // První Verze 
-                <Table id="table1"
-                    items="{/itemy}">
-                    <columns>
-                        <Column id="column1" width="50%">
-                            <Button id="columnButton1" text="{i18n>Button text 1 }" type="Transparent" />
-                        </Column>
+                <Button
+                    id="buttonPressAddColors"
+                    text="{i18n>pridat_barvy_tlacitkum}"
+                    press="onPressAddColors"
+                />
+                <Text
+                    id="Pridat_barvy_tlacitek"
+                    text="Odebrat barvy tlačítek"
+                />
 
-                        <Column id="column2" width="50%">
-                            <Button id="columnButton2" text="{i18n>Button text 2 }" type="Transparent" />
-                        </Column>
-                
-                        <Column id="column3" width="50%">
-                            <Button id="columnButton3" text="{i18n>Button text 3 }" type="Transparent" />
-                        </Column>
+                <Panel id="panelButtonTypes" headerText="{i18n>Typy_tlacitek}" expandable="true" expanded="true" class="sapUiResponsiveMargin">
+                    <VBox id="vboxButtonTypes">
+                        <HBox id="hboxButtonTypes" wrap="Wrap">
+                            <!-- jeden typ -->
+                            <VBox id="vboxTypeDefault" class="sapUiTinyMargin">
+                                <Button id="buttonTypeDefault" text="{i18n>button_type_default}" />
+                                <Text id="textTypeDefault" text="{i18n>button_type_default}" />
+                            </VBox>
+                            <VBox id="vboxTypeAccept" class="sapUiTinyMargin">
+                                <Button id="buttonTypeAccept" text="{i18n>button_type_accept}" />
+                                <Text id="textTypeAccept" text="{i18n>button_type_accept}" />
+                            </VBox>
+                            <VBox id="vboxTypeReject" class="sapUiTinyMargin">
+                                <Button id="buttonTypeReject" text="{i18n>button_type_reject}" />
+                                <Text id="textTypeReject" text="{i18n>button_type_reject}" />
+                            </VBox>
+                            <VBox id="vboxTypeEmphasized" class="sapUiTinyMargin">
+                                <Button id="buttonTypeEmphasized" text="{i18n>button_type_emphasized}" />
+                                <Text id="textTypeEmphasized" text="{i18n>button_type_emphasized}" />
+                            </VBox>
+                            <VBox id="vboxTypeTransparent" class="sapUiTinyMargin">
+                                <Button id="buttonTypeTransparent" text="{i18n>button_type_transparent}" />
+                                <Text id="textTypeTransparent" text="{i18n>button_type_transparent}" />
+                            </VBox>
+                            <VBox id="vboxTypeAttention" class="sapUiTinyMargin">
+                                <Button id="buttonTypeAttention" text="{i18n>button_type_attention}" />
+                                <Text id="textTypeAttention" text="{i18n>button_type_attention}" />
+                            </VBox>
+                            <VBox id="vboxTypeUnstyled" class="sapUiTinyMargin">
+                                <Button id="buttonTypeUnstyled" text="{i18n>button_type_unstyled}" />
+                                <Text id="textTypeUnstyled" text="{i18n>button_type_unstyled}" />
+                            </VBox>
+                            <VBox id="vboxTypeUp" class="sapUiTinyMargin">
+                                <Button id="buttonTypeUp" text="{i18n>button_type_up}" />
+                                <Text id="textTypeUp" text="{i18n>button_type_up}" />
+                            </VBox>
+                            <VBox id="vboxTypeBack" class="sapUiTinyMargin">
+                                <Button id="buttonTypeBack" text="{i18n>button_type_back}" />
+                                <Text id="textTypeBack" text="{i18n>button_type_back}" />
+                            </VBox>
+                            <VBox id="vboxTypeGhost" class="sapUiTinyMargin">
+                                <Button id="buttonTypeGhost" text="{i18n>button_type_ghost}" />
+                                <Text id="textTypeGhost" text="{i18n>button_type_ghost}" />
+                            </VBox>
+                            <VBox id="vboxTypeCritical" class="sapUiTinyMargin">
+                                <Button id="buttonTypeCritical" text="{i18n>button_type_critical}" />
+                                <Text id="textTypeCritical" text="{i18n>button_type_critical}" />
+                            </VBox>
+                            <VBox id="vboxTypeNegative" class="sapUiTinyMargin">
+                                <Button id="buttonTypeNegative" text="{i18n>button_type_negative}" />
+                                <Text id="textTypeNegative" text="{i18n>button_type_negative}" />
+                            </VBox>
+                            <VBox id="vboxTypeNeutral" class="sapUiTinyMargin">
+                                <Button id="buttonTypeNeutral" text="{i18n>button_type_neutral}" />
+                                <Text id="textTypeNeutral" text="{i18n>button_type_neutral}" />
+                            </VBox>
+                            <VBox id="vboxTypeSuccess" class="sapUiTinyMargin">
+                                <Button id="buttonTypeSuccess" text="{i18n>button_type_success}" />
+                                <Text id="textTypeSuccess" text="{i18n>button_type_success}" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </Panel>
 
-                                        
-                        <Column id="column4" width="50%">
-                            <Button id="columnButton4" text="{i18n>Button text 4 }" type="Transparent"/>
-                        </Column>
-
-                     </columns>
-                     
-                    
-                    <items>
-                        <ColumnListItem id="columnListItem1"  >
-                                <Text id="ListItemText1" text="{jmeno}" />
-                                <Text id="ListItemText2" text="{age}" />
-                                <Text id="ListItemText3" text="{city}" />
-                                <Text id="ListItemText4" text="{state}" />
-                        </ColumnListItem>
-                    </items>
-                </Table>
--->
-
-<!-- druhá verze -->
-                                <Table id="table1"
-                    items="{/itemy}">
+                <!-- Table -->
+                <Table id="table1" items="{/itemy}">
                     <columns>
                         <Column id="column1" width="50%">
                             <ObjectAttribute id="columnButton1" text="{i18n>Jméno }" />
                         </Column>
-
                         <Column id="column2" width="50%">
-                            <ObjectAttribute id="columnButton2" text="{i18n>Věk }"  />
+                            <ObjectAttribute id="columnButton2" text="{i18n>Věk }" />
                         </Column>
-                
                         <Column id="column3" width="50%">
-                            <ObjectAttribute id="columnButton3" text="{i18n>Město }"  />
+                            <ObjectAttribute id="columnButton3" text="{i18n>Město }" />
                         </Column>
-
-                                        
                         <Column id="column4" width="50%">
                             <ObjectAttribute id="columnButton4" text="{i18n>Stát }" />
                         </Column>
-
-                     </columns>
-                     
-                    
+                    </columns>
                     <items>
-                        <ColumnListItem id="columnListItem1"  >
-                                <ObjectAttribute id="ListItemText1" text="{jmeno}" />
-                                <ObjectAttribute id="ListItemText2" text="{age}" />
-                                <ObjectAttribute id="ListItemText3" text="{city}" />
-                                <ObjectAttribute id="ListItemText4" text="{state}" />
+                        <ColumnListItem id="columnListItem1">
+                            <ObjectAttribute id="ListItemText1" text="{jmeno}" />
+                            <ObjectAttribute id="ListItemText2" text="{age}" />
+                            <ObjectAttribute id="ListItemText3" text="{city}" />
+                            <ObjectAttribute id="ListItemText4" text="{state}" />
                         </ColumnListItem>
                     </items>
                 </Table>
-
-        </VBox>
-            
+            </VBox>
         </content>
         <footer>
             <Toolbar id="footerToolbar">
                 <ToolbarSpacer id="toolbarSpacer" />
-                <Button id="footerButton" text="{i18n>view_table_footer_button_text}" press="onFooterPress" />
+                <Button
+                    id="footerButton"
+                    text="{i18n>view_table_footer_button_text}"
+                    press="onFooterPress"
+                />
             </Toolbar>
         </footer>
     </Page>

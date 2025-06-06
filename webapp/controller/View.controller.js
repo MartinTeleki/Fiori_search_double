@@ -94,6 +94,127 @@ onButtonTap(oEvent) {
 window.oEvent = oEvent;
 window.oSource = oSource;
 window.oParams = oParams;
+},
+
+onPressDeleteColors(oEvent) {
+
+    // Tlačítka podle ID 
+  const oView = this.getView();
+  const oButtonPress = oView.byId("buttonPress");
+  const oButtonTap = oView.byId("buttonTap");
+  const oButtonDeleteColors = oView.byId("buttonPressDeleteColors");
+  const buttonPressAddColors = oView.byId("buttonPressAddColors");
+
+  console.log(oView);
+  console.log(oButtonPress);
+  console.log(oButtonTap);
+  console.log(oButtonDeleteColors);
+  console.log(buttonPressAddColors);
+
+  // Nastavení typu na default
+  if (oButtonPress) {
+    oButtonPress.setType("Default");
+  }
+  if (oButtonTap) {
+    oButtonTap.setType("Default");
+} 
+  if (oButtonDeleteColors) {
+    oButtonDeleteColors.setType("Default");
+  }
+  if (buttonPressAddColors) {
+    buttonPressAddColors.setType("Default");
+  }
+
+    // tlačítka podle typů
+  const buttonTypes = [
+    "Default",
+    "Accept",
+    "Reject",
+    "Emphasized",
+    "Transparent",
+    "Attention",
+    "Unstyled",
+    "Up",
+    "Back",
+    "Ghost",
+    "Critical",
+    "Negative",
+    "Neutral",
+    "Success"
+  ];
+
+  buttonTypes.forEach(type => {
+    const oButton = oView.byId(`buttonType${type}`);
+    if (oButton) {
+      oButton.setType("Default");
+    }})
+
+
+  // Zobrazit zprávu
+  MessageToast.show("Všechny barvy tlačítek byly resetovány na výchozí", {
+    duration: 3000,                  // default
+    width: "15em",                   // default
+    my: sap.ui.core.Popup.Dock.CenterBottom,
+    at: sap.ui.core.Popup.Dock.CenterBottom,
+    of: window,                      // default
+    offset: "0 0",                   // default
+    collision: "fit fit",            // default
+    onClose: null,                   // default
+    autoClose: true,                 // default
+    animationTimingFunction: "ease", // default
+    animationDuration: 1000,         // default
+    closeOnBrowserNavigation: true   // default
+});
+
+
+},
+
+onPressAddColors(oEvent) {
+  const oView = this.getView();
+
+  const oButtonPress = oView.byId("buttonPress");
+  const oButtonTap = oView.byId("buttonTap");
+  const oButtonDeleteColors = oView.byId("buttonPressDeleteColors");
+  const oButtonPressAddColors = oView.byId("buttonPressAddColors");
+
+  if (oButtonPress) {
+    oButtonPress.setType("Back");
+  }
+  if (oButtonTap) {
+    oButtonTap.setType("Accept");
+  }
+  if (oButtonDeleteColors) {
+    oButtonDeleteColors.setType("Reject");
+  }
+  if (oButtonPressAddColors) {
+    oButtonPressAddColors.setType("Critical");
+  }
+
+  // tlačítka podle typů
+  const buttonTypes = [
+    "Default",
+    "Accept",
+    "Reject",
+    "Emphasized",
+    "Transparent",
+    "Attention",
+    "Unstyled",
+    "Up",
+    "Back",
+    "Ghost",
+    "Critical",
+    "Negative",
+    "Neutral",
+    "Success"
+  ];
+
+  buttonTypes.forEach(type => {
+    const oButton = oView.byId(`buttonType${type}`);
+    if (oButton) {
+      oButton.setType(type);
+    }
+  });
 }
+
     });
 });
