@@ -10,7 +10,12 @@ onInit() {
   var oModel = new JSONModel({
     itemy: [
       { jmeno: "John", age: 30, city: "Prague", state: "CZ" },
-      { jmeno: "Jane", age: 25, city: "Brno", state: "CZ" },
+      { jmeno: "Jane", age: 25, city: "Brno",  state: "CZ" },
+      { jmeno: "Jirka", age: 27, city: "Ostrava", state: "CZ" },
+      { jmeno: "Pavel", age: 55, city: "Znojmo", state: "CZ" },
+      { jmeno: "René", age: 26, city: "Olomouc", state: "CZ" },
+      { jmeno: "Karel", age: 45, city: "Plzeň", state: "CZ" },
+      { jmeno: "Marel", age: 28, city: "Jirkov", state: "CZ" },
     ]
   });
   this.getView().setModel(oModel);

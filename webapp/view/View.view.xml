@@ -17,6 +17,14 @@
             <Text id="pridatTapText"
                   text="Přidat tap text" />
 
+                  
+            <Button id="buttonPressDeleteColors" 
+                    text="{i18n>odebrat_barvy_tlacitkum}" 
+                    press="onPressDeleteColors"/>
+            <Text id="Odstranit_barvy_tlacitek"
+                  text="Přidat tap text" />
+<!--
+ // První Verze 
                 <Table id="table1"
                     items="{/itemy}">
                     <columns>
@@ -46,6 +54,41 @@
                                 <Text id="ListItemText2" text="{age}" />
                                 <Text id="ListItemText3" text="{city}" />
                                 <Text id="ListItemText4" text="{state}" />
+                        </ColumnListItem>
+                    </items>
+                </Table>
+-->
+
+<!-- druhá verze -->
+                                <Table id="table1"
+                    items="{/itemy}">
+                    <columns>
+                        <Column id="column1" width="50%">
+                            <ObjectAttribute id="columnButton1" text="{i18n>Jméno }" />
+                        </Column>
+
+                        <Column id="column2" width="50%">
+                            <ObjectAttribute id="columnButton2" text="{i18n>Věk }"  />
+                        </Column>
+                
+                        <Column id="column3" width="50%">
+                            <ObjectAttribute id="columnButton3" text="{i18n>Město }"  />
+                        </Column>
+
+                                        
+                        <Column id="column4" width="50%">
+                            <ObjectAttribute id="columnButton4" text="{i18n>Stát }" />
+                        </Column>
+
+                     </columns>
+                     
+                    
+                    <items>
+                        <ColumnListItem id="columnListItem1"  >
+                                <ObjectAttribute id="ListItemText1" text="{jmeno}" />
+                                <ObjectAttribute id="ListItemText2" text="{age}" />
+                                <ObjectAttribute id="ListItemText3" text="{city}" />
+                                <ObjectAttribute id="ListItemText4" text="{state}" />
                         </ColumnListItem>
                     </items>
                 </Table>
