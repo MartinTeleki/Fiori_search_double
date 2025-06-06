@@ -4,6 +4,7 @@
     <Page id="page" title="{i18n>view_table_title}">
         <content>
             <VBox id="vbox" class="sapUiSmallMargin">
+            <VBox id="vboxButtons" class="sapUiSmallMArgin">
                 <Button
                     id="buttonPress"
                     text="{i18n>pridat_cislo}"
@@ -43,7 +44,7 @@
                     id="Pridat_barvy_tlacitek"
                     text="Odebrat barvy tlačítek"
                 />
-
+            </VBox>
                 <Panel id="panelButtonTypes" headerText="{i18n>Typy_tlacitek}" expandable="true" expanded="true" class="sapUiResponsiveMargin">
                     <VBox id="vboxButtonTypes">
                         <HBox id="hboxButtonTypes" wrap="Wrap">
@@ -125,7 +126,7 @@
                         </Column>
                     </columns>
                     <items>
-                        <ColumnListItem id="columnListItem1">
+                        <ColumnListItem id="columnListItem1" type="Navigation" press="onItemPress">
                             <ObjectAttribute id="ListItemText1" text="{jmeno}" />
                             <ObjectAttribute id="ListItemText2" text="{age}" />
                             <ObjectAttribute id="ListItemText3" text="{city}" />
