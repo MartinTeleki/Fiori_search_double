@@ -1,99 +1,37 @@
 {
-  "_version": "1.65.0",
-  "sap.app": {
-    "id": "cz.sgen.ukazka",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "0.0.1"
-    },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
-    "resources": "resources.json",
-    "sourceTemplate": {
-      "id": "@sap/generator-fiori:basic",
-      "version": "1.17.6",
-      "toolsId": "c5158307-2c3e-49ea-bed4-ed0be8917f62"
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "flexEnabled": true,
-    "dependencies": {
-      "minUI5Version": "1.136.1",
-      
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "cz.sgen.ukazka.i18n.i18n"
-        }
-      }
-    },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "transition": "slide",
-        "type": "View",
-        "viewType": "XML",
-        "path": "cz.sgen.ukazka.view",
-        "async": true,
-        "viewPath": "cz.sgen.ukazka.view"
-      },
-      "routes": [
-        {
-          "name": "RouteView",
-          "pattern": ":?query:",
-          "target": [
-            "TargetView"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetView": {
-          "id": "View",
-          "name": "View"
-        }
-      }
-    },
-    "rootView": {
-      "viewName": "cz.sgen.ukazka.view.App",
-      "type": "XML",
-      "id": "App",
-      "async": true
-    }
-  }
+	"sap.app": {
+		"id": "sap.ui.comp.sample.filterbar.FilterBar",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "cz.sgen.ukazka.view.View",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"libs": {
+				"sap.m": {},
+				"sap.f": {},
+				"sap.ui.comp": {},
+				"sap.ui.core": {},
+				"sap.ui.fl": {},
+				"sap.ui.mdc": {}
+			}
+		},
+		"config": {
+			"sample": {
+				"stretch": true,
+				"files": [
+					"Component.js",
+					"DynamicPageListReport.controller.js",
+					"DynamicPageListReport.view.xml",
+					"manifest.json",
+					"model.json"
+				]
+			}
+		}
+	}
 }

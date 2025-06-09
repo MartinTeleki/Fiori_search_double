@@ -1,26 +1,10 @@
-sap.ui.define([
-    "sap/ui/core/UIComponent",
-    "cz/sgen/ukazka/model/models"
-], (UIComponent, models) => {
-    "use strict";
+sap.ui.define(['sap/ui/core/UIComponent'],
+	function (UIComponent) {
+		"use strict";
 
-    return UIComponent.extend("cz.sgen.ukazka.Component", {
-        metadata: {
-            manifest: "json",
-            interfaces: [
-                "sap.ui.core.IAsyncContentCreation"
-            ]
-        },
-
-        init() {
-            // call the base component's init function
-            UIComponent.prototype.init.apply(this, arguments);
-
-            // set the device model
-            this.setModel(models.createDeviceModel(), "device");
-
-            // enable routing
-            this.getRouter().initialize();
-        }
-    });
-});
+		return UIComponent.extend("sap.ui.comp.sample.filterbar.DynamicPageListReport.Component", {
+			metadata: {
+				manifest: "json"
+			}
+		});
+	});
