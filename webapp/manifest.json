@@ -26,8 +26,8 @@
 				"stretch": true,
 				"files": [
 					"Component.js",
-					"DynamicPageListReport.controller.js",
-					"DynamicPageListReport.view.xml",
+					"controller/App.controller.js",
+					"view/View.view.xml",
 					"manifest.json",
 					"model.json"
 				]
