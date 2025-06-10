@@ -38,7 +38,7 @@
                                             templateShareable: true
                                         }"
                                     >
-                                        <core:Item id="itemName" key="{key}" text="{name}" />
+                                        <core:Item id="itemName" key="{key}" text="{name}" />   
                                     </MultiComboBox>
                                 </fb:control>
                             </fb:FilterGroupItem>
@@ -71,7 +71,24 @@
                                         <core:Item id="itemSupplierName" key="{key}" text="{name}" />
                                     </MultiComboBox>
                                 </fb:control>
+
                             </fb:FilterGroupItem>
+                            <fb:FilterGroupItem id="filterGroupItemSupplierAmount" name="Amount" label="Amount" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox
+                                        id="multiComboBoxSupplierAmount"
+                                        name="Amount"
+                                        selectionChange=".onSelectionChange"
+                                        items="{
+                                            path: '/ProductAmounts',
+                                            templateShareable: true
+                                        }"
+                                    >
+                                        <core:Item id="itemSupplierAmount" key="{key}" text="{name}" />
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>    
+
                         </fb:filterGroupItems>
                     </fb:FilterBar>
                 </f:content>
@@ -95,6 +112,9 @@
                     <Column id="columnSupplierName" minScreenWidth="Tablet" demandPopin="true">
                         <Text id="textSupplierName" text="SupplierName" />
                     </Column>
+                    <Column id="columnSupplierAmount" minScreenWidth="Tablet" demandPopin="true">
+                        <Text id="textSupplierAmount" text="SupplierAmount" />
+                    </Column>
                 </columns>
 
                 <items>
@@ -103,10 +123,16 @@
                             <ObjectIdentifier id="objectIdentifierName" title="{Name}" text="{ProductId}" />
                             <Text id="textCategoryCell" text="{Category}" />
                             <Text id="textSupplierNameCell" text="{SupplierName}" />
+                            <Text id="textSupplierAmountCell" text="{SupplierAmount}" />
                         </cells>
                     </ColumnListItem>
                 </items>
             </Table>
         </f:content>
+
+
+
+
+        
     </f:DynamicPage>
 </mvc:View>
