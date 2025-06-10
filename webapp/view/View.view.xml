@@ -1,5 +1,5 @@
 <mvc:View
-        controllerName="cz.sgen.ukazka.controller.View"
+        controllerName="cz.sgen.ukazka.controller.App"
         height="100%"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns:core="sap.ui.core"

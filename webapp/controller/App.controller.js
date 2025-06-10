@@ -10,8 +10,14 @@ sap.ui.define([
 
 Controller.extend("cz.sgen.ukazka.controller.App", {
 		onInit: function() {
+//			alert("Controller spuštěn");
 			this.oModel = new JSONModel();
 			this.oModel.loadData(sap.ui.require.toUrl("cz/sgen/ukazka/model/model.json"), null, false);
+
+			console.log(this.oModel.getData());	
+//			console.log(this.oModel());
+//			console.log("Ahoj")
+
 			this.getView().setModel(this.oModel);
 
 			this.applyData = this.applyData.bind(this);
