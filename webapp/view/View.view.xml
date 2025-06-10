@@ -89,6 +89,22 @@
                                 </fb:control>
                             </fb:FilterGroupItem>    
 
+                            <fb:FilterGroupItem id="filterGroupItemProductImage" name="ProductImage" label="ProductImage" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <MultiComboBox
+                                        id="multiComboBoxProductImage"
+                                        name="ProductImage"
+                                        selectionChange=".onSelectionChange"
+                                        items="{
+                                            path: '/ProductImage',
+                                            templateShareable: true
+                                        }"
+                                    >
+                                        <core:Item id="itemProductImage" key="{key}" text="{name}" />
+                                    </MultiComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>    
+
                         </fb:filterGroupItems>
                     </fb:FilterBar>
                 </f:content>
@@ -114,8 +130,10 @@
                         <Text id="textSupplierName" text="SupplierName" />
                     </Column>
                     <Column id="columnSupplierAmount" minScreenWidth="Tablet" demandPopin="true">
-                        <!-- <Text id="textSupplierAmount" text="SupplierAmount" /> -->
                          <Text id="textSupplierAmount" text="Amount" />
+                    </Column>
+                    <Column id="columnProductImage" minScreenWidth="Tablet" demandPopin="true">
+                         <Text id="textProductImage" text="ProductImage" />
                     </Column>
                 </columns>
 
@@ -123,10 +141,12 @@
                     <ColumnListItem id="columnListItem" vAlign="Middle">
                         <cells>
                             <ObjectIdentifier id="objectIdentifierName" title="{Name}" text="{ProductId}" />
-                            <Text id="textCategoryCell" text="{Category}" />
-                            <Text id="textSupplierNameCell" text="{SupplierName}" />
-                            <!-- <Text id="textSupplierAmountCell" text="{SupplierAmount}" /> -->
+                            <Text id="textCategoryCell"       text="{Category}" />
+                            <Text id="textSupplierNameCell"   text="{SupplierName}" />
                             <Text id="textSupplierAmountCell" text="{Amount}" />
+                            <!-- <Text id="textProductImageCell"   text="{ProductImage}" /> -->
+                            <Image id="imageProductImageCell" src="{ProductImage}" alt="{Name}" width="50px" height="50px" decorative="true"  />
+                            
                         </cells>
                     </ColumnListItem>
                 </items>
