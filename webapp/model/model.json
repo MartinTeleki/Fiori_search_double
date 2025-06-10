@@ -1,6 +1,6 @@
 {
   "ProductCollection": [{
-      "ProductId": "1239102",
+     "ProductId": "1239102",
       "Name": "Power Projector 4713",
       "Category": "Projector",
       "SupplierName": "Titanium",
@@ -26,7 +26,7 @@
       "Amount": "1"
   }, {
       "ProductId": "1239106",
-      "Name": "Power Projector 4713",
+      "Name": "Power Projector 4713", 
       "Category": "Projector",
       "SupplierName": "Titanium",
       "Amount": "1"
@@ -562,12 +562,14 @@
       "ProductId": "P1239839",
       "Name": "Monitor Locking Cable",
       "Category": "Accessory",
-      "SupplierName": "Technocom"
+      "SupplierName": "Technocom",
+      "Amount": "1"
   }, {
       "ProductId": "P1239840",
       "Name": "Monitor Locking Cable",
       "Category": "Accessory",
-      "SupplierName": "Titanium"
+      "SupplierName": "Titanium",
+      "Amount": "1"
   }, {
       "ProductId": "214-121-828",
       "Name": "Laptop Case",
