@@ -4,6 +4,7 @@
         xmlns:mvc="sap.ui.core.mvc"
         xmlns:core="sap.ui.core"
         xmlns="sap.m"
+        xmlns:m="sap.m"
         xmlns:f="sap.f"
         xmlns:fb="sap.ui.comp.filterbar"
         xmlns:svm="sap.ui.comp.smartvariants">
@@ -153,6 +154,11 @@
                     </ColumnListItem>
                 </items>
             </Table>
+
+
+
         </f:content>
+
+
     </f:DynamicPage>
 </mvc:View>

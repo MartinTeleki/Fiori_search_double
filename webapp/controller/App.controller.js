@@ -4,8 +4,11 @@ sap.ui.define([
 	'sap/m/Label',
 	'sap/ui/model/Filter',
 	'sap/ui/model/FilterOperator',
-	'sap/ui/comp/smartvariants/PersonalizableInfo'
-], function(Controller, JSONModel, Label, Filter, FilterOperator, PersonalizableInfo) {
+	'sap/ui/comp/smartvariants/PersonalizableInfo',
+	"sap/m/Button",
+    "sap/m/MessageToast",
+    "sap/ushell/Container"
+], function(Controller, JSONModel, Label, Filter, FilterOperator, PersonalizableInfo, Button, MessageToast, ushellContainer) {
 	"use strict";
 
 Controller.extend("cz.sgen.ukazka.controller.App", {
@@ -166,6 +169,39 @@ Controller.extend("cz.sgen.ukazka.controller.App", {
 			this.oExpandedLabel.setText(this.getFormattedSummaryTextExpanded());
 			this.oSnappedLabel.setText(this.getFormattedSummaryText());
 			this.oTable.setShowOverlay(true);
+		},
+
+		// Footer funkce
+		runCode: async function () {
+		            const FrameBoundExtension = await Container.getServiceAsync("FrameBoundExtension");
+
+            await FrameBoundExtension.createFooter({
+                id: "footer1",
+                contentLeft: [
+                    new Button({
+                        text: "Footer contentLeftBtn",
+                        press: () => {
+                            MessageToast.show("Press footer1 contentLeft");
+                        }
+                    })
+                ],
+                contentMiddle: [
+                    new Button({
+                        text: "Footer contentMiddleBtn",
+                        press: () => {
+                            MessageToast.show("Press footer1 contentMiddle");
+                        }
+                    })
+                ],
+                contentRight: [
+                    new Button({
+                        text: "Footer contentRightBtn",
+                        press: () => {
+                            MessageToast.show("Press footer1 contentRight");
+                        }
+                    })
+                ]
+            });
 		}
 	});
 });
