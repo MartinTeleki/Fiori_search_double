@@ -1,6 +1,7 @@
 {
 	"sap.app": {
-		"id": "sap.ui.comp.sample.filterbar.FilterBar",
+		
+	    "id": "sap.ui.comp.sample.filterbar.FilterBar",
 		"applicationVersion": {
 			"version": "1.0.0"
 		}
@@ -11,6 +12,9 @@
 			"type": "XML",
 			"async": true
 		},
+
+
+
 		"dependencies": {
 			"libs": {
 				"sap.m": {},
